@@ -30,5 +30,6 @@ script = ExtResource("2_w6mhv")
 [node name="DebugAction" type="Action" parent="OnStartCue"]
 script = ExtResource("3_pxavv")
 message = "Test Action"
+color = Color(0.768627, 0.172549, 0.243137, 1)
 
 [connection signal="custom_signal" from="Example" to="." method="_on_Example_custom_signal"]
