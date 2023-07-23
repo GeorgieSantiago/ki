@@ -9,7 +9,7 @@ func _ready():
 	timer.wait_time = delay
 	timer.autostart = true
 	timer.one_shot = is_one_shot
-	timer.connect("timeout", _callback)
+	timer.timeout.connect(_callback)
 	add_child(timer)
 	
 func _callback():

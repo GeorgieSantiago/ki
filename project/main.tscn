@@ -39,11 +39,11 @@ props = Array[Property]([Object(Property,"target":NodePath("../../Button"),"prop
 ])
 script = ExtResource("4_0opmq")
 
-[node name="Property" type="Property" parent="State"]
+[node name="ButtonTextState" type="Property" parent="State"]
 target = NodePath("../../Button")
 prop = &"text"
 
-[node name="Property2" type="Property" parent="State"]
+[node name="ButtonPositionState" type="Property" parent="State"]
 target = NodePath("../../Button")
 prop = &"position"
 

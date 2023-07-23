@@ -1,2 +1,4 @@
+res://system/debug/debug_property.gd
+res://system/debug/debug_state.gd
 res://default_env.tres
 res://main.tscn

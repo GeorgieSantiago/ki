@@ -18,7 +18,8 @@ public:
     StringName prop;
     void set_prop(StringName _prop) { prop = _prop; }
     StringName get_prop() { return prop; }
-    Variant get();
+    Variant value();
+    StringName key();
 };
 
 #endif

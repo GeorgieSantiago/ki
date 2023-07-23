@@ -1,4 +1,5 @@
 extends Property
 
 func _ready():
-	print(get())
+	print(key())
+	print(value())

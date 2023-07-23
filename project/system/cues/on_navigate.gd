@@ -1,6 +1,6 @@
 extends Cue
 
-@export var path_finder: PathFinder
+@export var path_finder: PathFollow3D
 
 func _ready():
 	path_finder.connect("path_finder_location_change", _on_change)
