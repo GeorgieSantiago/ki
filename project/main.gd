@@ -2,21 +2,8 @@ extends "res://test_base.gd"
 
 var custom_signal_emitted = null
 
-var action = Action.new()
-var cue = Cue.new()
-var character = Character.new()
-var player = Player.new()
-var anim = Animator.new()
-var game = Game.new()
-var game_mode = GameMode.new()
-var state = State.new()
-var property = Property.new()
-
 
 func _ready():
-	action._execute()
-	cue.add_child(action)
-	cue.invoke(self)
 	
 	var example: Example = $Example
 

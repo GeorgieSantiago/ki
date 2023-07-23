@@ -1,1 +1,7 @@
 res://main.gd
+res://debug_action.gd
+res://default_env.tres
+res://main.tscn
+res://on_input.gd
+res://on_start.gd
+res://test_base.gd

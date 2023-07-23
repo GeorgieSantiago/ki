@@ -56,4 +56,4 @@ func exit_with_status() -> void:
 		print_rich("[color=red] ******** FAILED ********[/color]")
 	print("")
 
-	get_tree().quit(0 if success else 1)
+	#get_tree().quit(0 if success else 1)

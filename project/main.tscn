@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmx2xuigcpvt4"]
+[gd_scene load_steps=4 format=3 uid="uid://dmx2xuigcpvt4"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_qesh5"]
+[ext_resource type="Script" path="res://cues/on_start.gd" id="2_w6mhv"]
+[ext_resource type="Script" path="res://actions/debug_action.gd" id="3_pxavv"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_qesh5")
@@ -21,5 +23,12 @@ offset_bottom = 21.0
 offset_right = 79.0
 offset_bottom = 29.0
 text = "Click me!"
+
+[node name="OnStartCue" type="Cue" parent="."]
+script = ExtResource("2_w6mhv")
+
+[node name="DebugAction" type="Action" parent="OnStartCue"]
+script = ExtResource("3_pxavv")
+message = "Test Action"
 
 [connection signal="custom_signal" from="Example" to="." method="_on_Example_custom_signal"]
