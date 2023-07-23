@@ -13,4 +13,18 @@ void State::_bind_methods()
 
 }
 
+void State::_ready()
+{
+	int cnt = get_child_count();
+    for (int i = 0;i < cnt;i++)
+    {
+        Node* child = get_child(i);
+        Property* prop = Object::cast_to<Property>(child);
+        if (prop != nullptr)
+        {
+            props.append(prop);
+        }
+    }
+}
+
 //@TODO bind on props change method

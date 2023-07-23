@@ -7,7 +7,7 @@ void Property::_bind_methods()
     ClassDB::bind_method(D_METHOD("set_prop", "_prop"), &Property::set_prop);
 	ClassDB::bind_method(D_METHOD("get_prop"), &Property::get_prop);
     ClassDB::bind_method(D_METHOD("get"), &Property::get);
-	
+
 	ADD_PROPERTY(
 		PropertyInfo(Variant::NODE_PATH, "target"),
 		"set_target",
@@ -15,7 +15,7 @@ void Property::_bind_methods()
 	);
 
     ADD_PROPERTY(
-		PropertyInfo(Variant::NODE_PATH, "prop"),
+		PropertyInfo(Variant::STRING_NAME, "prop"),
 		"set_prop",
 		"get_prop"
 	);
