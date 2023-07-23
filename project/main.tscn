@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_qesh5"]
 [ext_resource type="Script" path="res://system/cues/on_start_cue.gd" id="2_w6mhv"]
 [ext_resource type="Script" path="res://system/actions/debug_action.gd" id="3_pxavv"]
-[ext_resource type="Script" path="res://debug_property.gd" id="4_8pacd"]
+[ext_resource type="Script" path="res://system/debug/debug_state.gd" id="4_0opmq"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_qesh5")
@@ -33,9 +33,18 @@ script = ExtResource("3_pxavv")
 message = "Test Action"
 color = Color(0.772549, 0.937255, 0.117647, 1)
 
-[node name="Property" type="Property" parent="."]
-target = NodePath("../Button")
+[node name="State" type="State" parent="."]
+props = Array[Property]([Object(Property,"target":NodePath("../../Button"),"prop":&"text","_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":null)
+, Object(Property,"target":NodePath("../../Button"),"prop":&"position","_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":null)
+])
+script = ExtResource("4_0opmq")
+
+[node name="Property" type="Property" parent="State"]
+target = NodePath("../../Button")
 prop = &"text"
-script = ExtResource("4_8pacd")
+
+[node name="Property2" type="Property" parent="State"]
+target = NodePath("../../Button")
+prop = &"position"
 
 [connection signal="custom_signal" from="Example" to="." method="_on_Example_custom_signal"]

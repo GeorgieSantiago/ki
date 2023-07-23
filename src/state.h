@@ -3,6 +3,7 @@
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/node.hpp>
+#include <godot_cpp/classes/engine.hpp>
 #include "property.h"
 
 typedef TypedArray<Property> PropertyArray;
@@ -15,9 +16,9 @@ class State : public Node
 protected:
 	static void _bind_methods();
 public:
-    PropertyArray props;
-    PropertyArray get_props() { return props; }
-    void set_props(PropertyArray _props) { props = props; }
+    TypedArray<Property> props;
+    TypedArray<Property> get_props() { return props; }
+    void set_props(TypedArray<Property> _props) { props = _props; }
     void _ready();
 };
 
