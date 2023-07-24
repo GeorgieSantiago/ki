@@ -21,7 +21,9 @@ public:
     TypedArray<Property> get_props() { return props; }
     void set_props(TypedArray<Property> _props) { props = _props; }
     void _ready();
-    void on_property_list_changed();
+    void on_property_updated(Variant target);
+    String get_property_path_relative_to_state(NodePath prop);
+
 };
 
 #endif

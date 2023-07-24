@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://system/cues/on_start_cue.gd" id="2_w6mhv"]
 [ext_resource type="Script" path="res://system/actions/debug_action.gd" id="3_pxavv"]
-[ext_resource type="Script" path="res://system/debug/debug_state.gd" id="4_0opmq"]
+[ext_resource type="Script" path="res://system/debug/debug_state.gd" id="4_3ww6v"]
 [ext_resource type="Script" path="res://system/cues/on_input_cue.gd" id="4_ln3wg"]
 
 [node name="Node" type="Node"]
@@ -20,23 +20,26 @@ script = ExtResource("3_pxavv")
 message = "Test Action"
 color = Color(0.772549, 0.937255, 0.117647, 1)
 
-[node name="State" type="State" parent="."]
-script = ExtResource("4_0opmq")
-
-[node name="ButtonTextState" type="Property" parent="State"]
-target = NodePath("../../Button")
-prop = &"text"
-
-[node name="ButtonPositionState" type="Property" parent="State"]
-target = NodePath("../../Button")
-prop = &"position"
-
-[node name="OnSpacebarPressed" type="Cue" parent="."]
+[node name="OnUIAccept" type="Cue" parent="."]
 script = ExtResource("4_ln3wg")
-input_key = "ui_accept"
+input_action = "ui_accept"
 on_released = true
 
-[node name="DebugAction" type="Action" parent="OnSpacebarPressed"]
+[node name="DebugAction" type="Action" parent="OnUIAccept"]
 script = ExtResource("3_pxavv")
 message = "Spacebar pressed"
 color = Color(1, 1, 1, 1)
+
+[node name="State" type="State" parent="."]
+props = Array[Property]([Object(Property,"target":NodePath("../../Button"),"prop":&"text","_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":null)
+, Object(Property,"target":NodePath("../../OnUIAccept/DebugAction"),"prop":&"message","_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":null)
+])
+script = ExtResource("4_3ww6v")
+
+[node name="Property" type="Property" parent="State"]
+target = NodePath("../../Button")
+prop = &"text"
+
+[node name="Property2" type="Property" parent="State"]
+target = NodePath("../../OnUIAccept/DebugAction")
+prop = &"message"
