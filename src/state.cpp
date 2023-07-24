@@ -23,10 +23,17 @@ void State::_ready()
         if (prop != nullptr)
         {
             arr.push_back(prop);
+            Callable callback = Callable::Callable(this, "on_property_list_changed");
+            prop->connect("property_list_changed", callback);
         }
     }
 	props.resize(arr.size());
 	props = arr;
+}
+
+void State::on_property_list_changed()
+{
+    UtilityFunctions::print("Property of state has changed");
 }
 
 //@TODO bind on props change method

@@ -1,5 +1,5 @@
-#ifndef COQUI_GAME_H
-#define COQUI_GAME_H
+#ifndef KI_GAME_H
+#define KI_GAME_H
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/object.hpp>

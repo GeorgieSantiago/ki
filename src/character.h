@@ -1,5 +1,5 @@
-#ifndef COQUI_CHARACTER_H
-#define COQUI_CHARACTER_H
+#ifndef KI_CHARACTER_H
+#define KI_CHARACTER_H
 
 #include <godot_cpp/classes/character_body3d.hpp>
 #include <godot_cpp/classes/mesh_instance3d.hpp>

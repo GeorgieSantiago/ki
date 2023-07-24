@@ -1,5 +1,5 @@
-#ifndef COQUI_ACTION_H
-#define COQUI_ACTION_H
+#ifndef KI_ACTION_H
+#define KI_ACTION_H
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/node.hpp>
@@ -21,4 +21,4 @@ public:
 };
 
 
-#endif//! COQUI_ACTION_H
+#endif//! KI_ACTION_H

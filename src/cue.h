@@ -1,5 +1,5 @@
-#ifndef COQUI_CUE_H
-#define COQUI_CUE_H
+#ifndef KI_CUE_H
+#define KI_CUE_H
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/node.hpp>
@@ -27,4 +27,4 @@ public:
 	bool in_editor();
 };
 
-#endif//! COQUI_CUE_H
+#endif//! KI_CUE_H

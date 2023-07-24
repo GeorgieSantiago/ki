@@ -1,13 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690155711
+::res://::1690167200
 debug_state.gd::GDScript::-1::1690096826::0::1::::<>State<>::
-default_env.tres::Environment::4372949939730463947::1690152933::0::1::::<><>::
+default_env.tres::Environment::4372949939730463947::1690167143::0::1::::<><>::
 example.gdextension::GDExtension::-1::1690092671::0::1::::<><>::
 icon.png::CompressedTexture2D::6082749124934761441::1690092671::1690093416::1::::<><>::
 main.gd::GDScript::-1::1690149980::0::1::::<>Node<>::
-main.tscn::PackedScene::8050690358244911695::1690152933::0::1::::<><>::res://main.gd<>res://system/cues/on_start_cue.gd<>res://system/actions/debug_action.gd<>res://system/debug/debug_state.gd
+main.tscn::PackedScene::8050690358244911695::1690167143::0::1::::<><>::res://main.gd<>res://system/cues/on_start_cue.gd<>res://system/actions/debug_action.gd<>res://system/debug/debug_state.gd
 test_base.gd::GDScript::-1::1690094918::0::1::::<>Node<>::
-::res://bin/::1690155706
+::res://bin/::1690167086
 ::res://bin/libgdexample.osx.template_debug.framework/::1690092671
 ::res://bin/libgdexample.osx.template_debug.framework/Resources/::1690092671
 ::res://bin/libgdexample.osx.template_release.framework/::1690092671
@@ -28,6 +28,6 @@ on_player_enter_area_cue.gd::GDScript::-1::1690152567::0::1::::<>Cue<>::
 on_process.gd::GDScript::-1::1690085392::0::1::::<>Cue<>::
 on_start_cue.gd::GDScript::-1::1690085392::0::1::::<>Cue<>::
 on_timer.gd::GDScript::-1::1690152734::0::1::::<>Cue<>::
-::res://system/debug/::1690151474
-debug_property.gd::GDScript::-1::1690155553::0::1::::<>Property<>::
-debug_state.gd::GDScript::-1::1690155559::0::1::::<>State<>::
+::res://system/debug/::1690156232
+debug_property.gd::GDScript::-1::1690155719::0::1::::<>Property<>::
+debug_state.gd::GDScript::-1::1690156232::0::1::::<>State<>::

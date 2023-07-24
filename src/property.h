@@ -1,5 +1,5 @@
-#ifndef COQUI_PROPERTY_H
-#define COQUI_PROPERTY_H
+#ifndef KI_PROPERTY_H
+#define KI_PROPERTY_H
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/node.hpp>

@@ -1,9 +1,10 @@
-#ifndef COQUI_STATE_H
-#define COQUI_STATE_H
+#ifndef KI_STATE_H
+#define KI_STATE_H
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/node.hpp>
 #include <godot_cpp/classes/engine.hpp>
+#include <godot_cpp/variant/utility_functions.hpp>
 #include "property.h"
 
 typedef TypedArray<Property> PropertyArray;
@@ -20,6 +21,7 @@ public:
     TypedArray<Property> get_props() { return props; }
     void set_props(TypedArray<Property> _props) { props = _props; }
     void _ready();
+    void on_property_list_changed();
 };
 
 #endif

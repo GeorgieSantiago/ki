@@ -1,5 +1,5 @@
-#ifndef COQUI_ANIMATOR_H
-#define COQUI_ANIMATOR_H
+#ifndef KI_ANIMATOR_H
+#define KI_ANIMATOR_H
 
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/classes/animation_tree.hpp>
