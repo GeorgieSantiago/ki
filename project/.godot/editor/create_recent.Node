@@ -1,14 +1,14 @@
+CollisionShape3D
+Character
+Cinema
 Camera3D
 WorldEnvironment
 MeshInstance3D
-CollisionShape3D
 StaticBody3D
 Movement
 Player
-Character
 DebugAction
 OnPropertyChange
 Property
 State
 Cue
-OnStartCue

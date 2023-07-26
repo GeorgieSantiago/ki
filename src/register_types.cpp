@@ -24,6 +24,7 @@
 #include "state.h"
 #include "property.h"
 #include "movement.h"
+#include "cinema.h"
 
 using namespace godot;
 
@@ -48,6 +49,8 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 	ClassDB::register_class<State>();
 	ClassDB::register_class<Property>();
 	ClassDB::register_class<Movement>();
+	ClassDB::register_class<Cinema>();
+	
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {
