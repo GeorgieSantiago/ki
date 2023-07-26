@@ -1,5 +1,14 @@
+Camera3D
+WorldEnvironment
+MeshInstance3D
+CollisionShape3D
+StaticBody3D
+Movement
+Player
+Character
+DebugAction
+OnPropertyChange
 Property
 State
-DebugAction
 Cue
 OnStartCue

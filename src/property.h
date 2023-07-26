@@ -18,9 +18,11 @@ public:
     NodePath target;
     void set_target(NodePath path) { target = path; }
     NodePath get_target() { return target; }
+
     StringName prop;
     void set_prop(StringName _prop) { prop = _prop; }
     StringName get_prop() { return prop; }
+    
     Variant value();
     StringName key();
     void set_state(Variant value);

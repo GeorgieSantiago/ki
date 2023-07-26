@@ -23,6 +23,7 @@
 #include "game_mode.h"
 #include "state.h"
 #include "property.h"
+#include "movement.h"
 
 using namespace godot;
 
@@ -39,13 +40,14 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 
 	ClassDB::register_class<Action>();
 	ClassDB::register_class<Cue>();
-	ClassDB::register_class<Player>();
 	ClassDB::register_class<Character>();
+	ClassDB::register_class<Player>();
 	ClassDB::register_class<Animator>();
 	ClassDB::register_class<Game>();
 	ClassDB::register_class<GameMode>();
 	ClassDB::register_class<State>();
 	ClassDB::register_class<Property>();
+	ClassDB::register_class<Movement>();
 }
 
 void uninitialize_example_module(ModuleInitializationLevel p_level) {

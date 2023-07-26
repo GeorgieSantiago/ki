@@ -1,9 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmx2xuigcpvt4"]
+[gd_scene load_steps=13 format=3 uid="uid://dmx2xuigcpvt4"]
 
 [ext_resource type="Script" path="res://system/cues/on_start_cue.gd" id="2_w6mhv"]
 [ext_resource type="Script" path="res://system/actions/debug_action.gd" id="3_pxavv"]
 [ext_resource type="Script" path="res://system/debug/debug_state.gd" id="4_3ww6v"]
 [ext_resource type="Script" path="res://system/cues/on_input_cue.gd" id="4_ln3wg"]
+[ext_resource type="Script" path="res://system/cues/on_property_change.gd" id="5_famaa"]
+[ext_resource type="PackedScene" uid="uid://douscbe20506q" path="res://assets/sophia/mini_sophia.glb" id="6_cdieg"]
+[ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://assets/gobot/model/gobot.glb" id="7_p4xso"]
+[ext_resource type="Environment" uid="uid://b3kj31xhi7sr8" path="res://default_env.tres" id="8_223c8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qlok6"]
+radius = 0.383307
+height = 0.799587
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_03uqh"]
+height = 1.60237
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jxxj0"]
+size = Vector3(5.91047, 0.24199, 5.95375)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u0s47"]
 
 [node name="Node" type="Node"]
 
@@ -43,3 +59,49 @@ prop = &"text"
 [node name="Property2" type="Property" parent="State"]
 target = NodePath("../../OnUIAccept/DebugAction")
 prop = &"message"
+
+[node name="OnPropertyChange" type="Cue" parent="." node_paths=PackedStringArray("property")]
+script = ExtResource("5_famaa")
+property = NodePath("../State/Property")
+
+[node name="DebugAction" type="Action" parent="OnPropertyChange"]
+script = ExtResource("3_pxavv")
+message = "Property Updated"
+color = Color(0, 0.945098, 0.478431, 1)
+
+[node name="Character" type="Character" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.433001, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Character"]
+shape = SubResource("CapsuleShape3D_qlok6")
+
+[node name="mini_sophia" parent="Character/CollisionShape3D" instance=ExtResource("6_cdieg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265, 0)
+
+[node name="Movement" type="Movement" parent="Character"]
+
+[node name="Player" type="Player" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55907, 0.755906, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_03uqh")
+
+[node name="gobot" parent="Player/CollisionShape3D" instance=ExtResource("7_p4xso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.688, 0)
+
+[node name="Movement" type="Movement" parent="Player"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_jxxj0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+transform = Transform3D(6, 0, 0, 0, 0.2, 0, 0, 0, 6, 0, 0, 0)
+mesh = SubResource("BoxMesh_u0s47")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("8_223c8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33543, 4.23311)

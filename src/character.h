@@ -8,6 +8,7 @@
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/engine.hpp>
 #include <godot_cpp/classes/navigation_agent3d.hpp>
+#include "movement.h"
 
 using namespace godot;
 
@@ -15,23 +16,15 @@ class Character : public CharacterBody3D
 {
 	GDCLASS(Character, CharacterBody3D)
 
-private:
-	bool is_editor();
-	void print_vector(Vector3 vector, String message);
-protected:
+public:
 	static void _bind_methods();
-	const double speed = 5.0;
-	const double jump_velocity = 4.5;
-	const double angular_velocity = 0.1;
-	float gravity = ProjectSettings::get_singleton()->get_setting("physics/3d/default_gravity");
 	MeshInstance3D* mesh_instance;
 	NavigationAgent3D* nav_agent;
-public:
 
-	bool debug = false;
-	bool get_debug();
-	void set_debug(bool mode);
-	
+    NodePath movement;
+    NodePath get_movement()  { return movement; }
+	void set_movement(NodePath _movement) { movement = _movement; }
+
 	NodePath mesh_instance_ptr;
 	NodePath get_mesh_instance_ptr();
 	void set_mesh_instance_ptr(NodePath mesh_instance);
@@ -42,7 +35,7 @@ public:
 
 	void handle_navigation(Vector3 position);
 	void _ready() override;
-	void _physics_process(double delta) override;
+	void _enter_tree();
 };
 
 #endif
