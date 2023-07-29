@@ -26,94 +26,103 @@ size = Vector3(5.91047, 0.24199, 5.95375)
 
 [node name="Node" type="Node"]
 
-[node name="Button" type="Button" parent="."]
-offset_right = 79.0
-offset_bottom = 29.0
-text = "Click"
-
-[node name="OnStartCue" type="Cue" parent="."]
-script = ExtResource("2_w6mhv")
-
-[node name="DebugAction" type="Action" parent="OnStartCue"]
-script = ExtResource("3_pxavv")
-message = "Test Action"
-color = Color(0.772549, 0.937255, 0.117647, 1)
-
-[node name="OnUIAccept" type="Cue" parent="."]
-script = ExtResource("4_ln3wg")
-input_action = "ui_accept"
-on_released = true
-
-[node name="DebugAction" type="Action" parent="OnUIAccept"]
-script = ExtResource("3_pxavv")
-message = "Spacebar pressed"
-color = Color(1, 1, 1, 1)
-
 [node name="State" type="State" parent="."]
-props = Array[Property]([Object(Property,"target":NodePath("../../Button"),"prop":&"text","_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":null)
-, Object(Property,"target":NodePath("../../OnUIAccept/DebugAction"),"prop":&"message","_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":null)
+props = Array[Property]([Object(Property,"target":NodePath("../../UI/Button"),"prop":&"text","_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":null)
+, Object(Property,"target":NodePath("../../Cues/OnUIAccept/DebugAction"),"prop":&"message","_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","script":null)
 ])
 script = ExtResource("4_3ww6v")
 
 [node name="Property" type="Property" parent="State"]
-target = NodePath("../../Button")
+target = NodePath("../../UI/Button")
 prop = &"text"
 
 [node name="Property2" type="Property" parent="State"]
-target = NodePath("../../OnUIAccept/DebugAction")
+target = NodePath("../../Cues/OnUIAccept/DebugAction")
 prop = &"message"
 
-[node name="OnPropertyChange" type="Cue" parent="." node_paths=PackedStringArray("property")]
-script = ExtResource("5_famaa")
-property = NodePath("../State/Property")
+[node name="Cinema" type="Cinema" parent="."]
+speed = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0499999, 1, 3.2)
 
-[node name="DebugAction" type="Action" parent="OnPropertyChange"]
+[node name="Cues" type="Node" parent="."]
+
+[node name="OnStartCue" type="Cue" parent="Cues"]
+script = ExtResource("2_w6mhv")
+
+[node name="DebugAction" type="Action" parent="Cues/OnStartCue"]
+script = ExtResource("3_pxavv")
+message = "Test Action"
+color = Color(0.772549, 0.937255, 0.117647, 1)
+
+[node name="OnUIAccept" type="Cue" parent="Cues"]
+script = ExtResource("4_ln3wg")
+input_action = "ui_accept"
+on_released = true
+
+[node name="DebugAction" type="Action" parent="Cues/OnUIAccept"]
+script = ExtResource("3_pxavv")
+message = "Spacebar pressed"
+color = Color(1, 1, 1, 1)
+
+[node name="OnPropertyChange" type="Cue" parent="Cues" node_paths=PackedStringArray("property")]
+script = ExtResource("5_famaa")
+property = NodePath("../../State/Property")
+
+[node name="DebugAction" type="Action" parent="Cues/OnPropertyChange"]
 script = ExtResource("3_pxavv")
 message = "Property Updated"
 color = Color(0, 0.945098, 0.478431, 1)
 
-[node name="Character" type="Character" parent="."]
+[node name="Characters" type="Node" parent="."]
+
+[node name="Character" type="Character" parent="Characters"]
 movement = NodePath("Movement")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.433001, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Character"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/Character"]
 shape = SubResource("CapsuleShape3D_qlok6")
 
-[node name="mini_sophia" parent="Character/CollisionShape3D" instance=ExtResource("6_cdieg")]
+[node name="mini_sophia" parent="Characters/Character/CollisionShape3D" instance=ExtResource("6_cdieg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.265, 0)
 
-[node name="Movement" type="Movement" parent="Character"]
+[node name="Movement" type="Movement" parent="Characters/Character"]
 
-[node name="Player" type="Player" parent="."]
+[node name="Player" type="Player" parent="Characters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55907, 0.755906, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/Player"]
 shape = SubResource("CapsuleShape3D_03uqh")
 
-[node name="gobot" parent="Player/CollisionShape3D" instance=ExtResource("7_p4xso")]
+[node name="gobot" parent="Characters/Player/CollisionShape3D" instance=ExtResource("7_p4xso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.688, 0)
 
-[node name="Movement" type="Movement" parent="Player"]
+[node name="Movement" type="Movement" parent="Characters/Player"]
 
-[node name="Character2" type="Character" parent="."]
+[node name="Character2" type="Character" parent="Characters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53777, 0.405486, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Character2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/Character2"]
 shape = SubResource("CapsuleShape3D_nrmug")
 
-[node name="bee_bot" parent="Character2/CollisionShape3D" instance=ExtResource("8_x2vnt")]
+[node name="bee_bot" parent="Characters/Character2/CollisionShape3D" instance=ExtResource("8_x2vnt")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Env" type="Node" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
+environment = ExtResource("8_223c8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Env"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/StaticBody3D"]
 shape = SubResource("BoxShape3D_jxxj0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Env/StaticBody3D/CollisionShape3D"]
 transform = Transform3D(6, 0, 0, 0, 0.2, 0, 0, 0, 6, 0, 0, 0)
 mesh = SubResource("BoxMesh_u0s47")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("8_223c8")
+[node name="UI" type="Node" parent="."]
 
-[node name="Cinema" type="Cinema" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
+[node name="Button" type="Button" parent="UI"]
+offset_right = 79.0
+offset_bottom = 31.0
+text = "Click"
