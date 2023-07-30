@@ -1,3 +1,5 @@
+Node
+RigidBody3D
 CollisionShape3D
 Character
 Cinema
@@ -10,5 +12,3 @@ Player
 DebugAction
 OnPropertyChange
 Property
-State
-Cue

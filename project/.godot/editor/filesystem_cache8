@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690354160
-default_env.tres::Environment::4372949939730463947::1690354122::0::1::::<><>::
+::res://::1690615752
+default_env.tres::Environment::4372949939730463947::1690615124::0::1::::<><>::
 example.gdextension::GDExtension::-1::1690092671::0::1::::<><>::
 icon.png::CompressedTexture2D::6082749124934761441::1690092671::1690093416::1::::<><>::
 main.gd::GDScript::-1::1690149980::0::1::::<>Node<>::
-main.tscn::PackedScene::8050690358244911695::1690354122::0::1::::<><>::res://system/cues/on_start_cue.gd<>res://system/actions/debug_action.gd<>res://system/debug/debug_state.gd<>res://system/cues/on_input_cue.gd<>res://system/cues/on_property_change.gd<>uid://douscbe20506q::::res://assets/sophia/mini_sophia.glb<>uid://kod0awm1ha4o::::res://system/cues/gobot/model/gobot.glb<>uid://b3kj31xhi7sr8::::res://default_env.tres<>uid://d0gfx2lihdq44::::res://assets/bee_bot/bee_bot.glb
+main.tscn::PackedScene::8050690358244911695::1690615124::0::1::::<><>::res://system/cues/on_start_cue.gd<>res://system/actions/debug_action.gd<>res://system/debug/debug_state.gd<>res://system/cues/on_input_cue.gd<>res://system/cues/on_property_change.gd<>uid://douscbe20506q::::res://assets/sophia/mini_sophia.glb<>uid://kod0awm1ha4o::::res://system/cues/gobot/model/gobot.glb<>uid://b3kj31xhi7sr8::::res://default_env.tres<>uid://d0gfx2lihdq44::::res://assets/bee_bot/bee_bot.glb
 test_base.gd::GDScript::-1::1690094918::0::1::::<>Node<>::
 ::res://assets/::1690352595
 ::res://assets/bee_bot/::1690352596
@@ -62,7 +62,7 @@ eyes_diffuse_map.png::CompressedTexture2D::2912872863479850571::1690351401::1690
 eyes_normal_map.png::CompressedTexture2D::4198046845364950451::1690351401::1690351402::1::::<><>::
 mouth_diffuse_map.png::CompressedTexture2D::4505950842584395159::1690351401::1690351402::1::::<><>::
 mouth_normal_map.png::CompressedTexture2D::6825164232218161721::1690351401::1690351402::1::::<><>::
-::res://bin/::1690354155
+::res://bin/::1690615748
 ::res://bin/libgdexample.osx.template_debug.framework/::1690092671
 ::res://bin/libgdexample.osx.template_debug.framework/Resources/::1690092671
 ::res://bin/libgdexample.osx.template_release.framework/::1690092671
@@ -73,7 +73,7 @@ debug_action.gd::GDScript::-1::1690095460::0::1::::DebugAction<>Action<>::
 enable_action.gd::GDScript::-1::1690085392::0::1::::<>Node<>::
 set_character_location.gd::GDScript::-1::1690152915::0::1::::<>Action<>::
 spawn_action.gd::GDScript::-1::1690085392::0::1::::<>Action<>::
-::res://system/cues/::1690349752
+::res://system/cues/::1690435409
 on_area_enter_cue.gd::GDScript::-1::1690085392::0::1::::<>Cue<>::
 on_area_exited_cue.gd::GDScript::-1::1690085392::0::1::::<>Cue<>::
 on_input_cue.gd::GDScript::-1::1690171990::0::1::::<>Cue<>::
@@ -82,7 +82,7 @@ on_physics_process.gd::GDScript::-1::1690085392::0::1::::<>Cue<>::
 on_player_enter_area_cue.gd::GDScript::-1::1690152567::0::1::::<>Cue<>::
 on_process.gd::GDScript::-1::1690085392::0::1::::<>Cue<>::
 on_property_change.gd::GDScript::-1::1690348932::0::1::::OnPropertyChange<>Cue<>::
-on_start_cue.gd::GDScript::-1::1690085392::0::1::::<>Cue<>::
+on_start_cue.gd::GDScript::-1::1690435409::0::1::::<>Cue<>::
 on_timer.gd::GDScript::-1::1690152734::0::1::::<>Cue<>::
 ::res://system/cues/gobot/::1690351391
 gobot_skin.gd::GDScript::-1::1690349752::0::1::::<>Node3D<>::
