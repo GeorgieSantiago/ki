@@ -48,6 +48,10 @@ void Cinema::_ready()
 */
 void Cinema::_physics_process(float delta)
 {
+    if (Engine::get_singleton()->is_editor_hint()) {
+        return;
+    }
+
     if (mode == Mode::FREE) { 
         Input* input = Input::get_singleton();
         float z = input->is_action_pressed(UP) ? -1 : 0;
@@ -56,12 +60,11 @@ void Cinema::_physics_process(float delta)
         x  += input->is_action_pressed(LEFT) ? -1 : 0;
         Vector3 movement = Vector3(x * delta * speed, 0, z * delta * speed);
         set_position(get_position() + movement);
+        if (input->get_last_mouse_velocity() != Vector2())
+        {
+            UtilityFunctions::print("Mouse moved");
+        }
     }
-
-    if (Engine::get_singleton()->is_editor_hint()) {
-        return;
-    }
-
 }
 
 void Cinema::_unhandled_input(const Ref<InputEvent> event)
